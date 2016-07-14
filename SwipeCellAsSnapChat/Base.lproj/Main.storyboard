@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SwipeCellAsSnapChat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,196 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1un-fn-GM2">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1un-fn-GM2" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="BNn-C5-OTB"/>
+                            <constraint firstAttribute="trailing" secondItem="1un-fn-GM2" secondAttribute="trailing" id="I7I-0L-Ox0"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1un-fn-GM2" secondAttribute="bottom" id="LDd-8b-bvh"/>
+                            <constraint firstItem="1un-fn-GM2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="uiv-X8-mgV"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="1un-fn-GM2"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="LDd-8b-bvh"/>
+                                <exclude reference="BNn-C5-OTB"/>
+                                <exclude reference="I7I-0L-Ox0"/>
+                                <exclude reference="uiv-X8-mgV"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="1un-fn-GM2"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="LDd-8b-bvh"/>
+                                <include reference="BNn-C5-OTB"/>
+                                <include reference="I7I-0L-Ox0"/>
+                                <include reference="uiv-X8-mgV"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="scrollView" destination="1un-fn-GM2" id="m6z-aj-g1S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="393" y="373.5"/>
+        </scene>
+        <!--First View Controller-->
+        <scene sceneID="wxy-vN-sve">
+            <objects>
+                <viewController storyboardIdentifier="first_view_controller" id="TKq-0b-ifF" customClass="FirstViewController" customModule="SwipeCellAsSnapChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ONU-HY-t4Z"/>
+                        <viewControllerLayoutGuide type="bottom" id="Yu3-qK-Z9L"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GDc-nk-e4u">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mkZ-Ne-HkP">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="434" id="Zsi-1a-xUW"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="custom_cell" id="F1F-Gx-mN6" customClass="CustomCell" customModule="SwipeCellAsSnapChat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F1F-Gx-mN6" id="VQw-99-DpQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fct-g0-bct">
+                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="19" y="9" width="42" height="21"/>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="fct-g0-bct"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="fct-g0-bct"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="testLabel" destination="fct-g0-bct" id="FX1-SV-qs2"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Zsi-1a-xUW"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="Zsi-1a-xUW"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="TKq-0b-ifF" id="Mzn-Bh-LP1"/>
+                                    <outlet property="delegate" destination="TKq-0b-ifF" id="ClQ-bo-Xjj"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96078431369999995" green="0.99607843139999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="mkZ-Ne-HkP" firstAttribute="leading" secondItem="GDc-nk-e4u" secondAttribute="leading" id="6zg-Vg-LY9"/>
+                            <constraint firstItem="mkZ-Ne-HkP" firstAttribute="top" secondItem="GDc-nk-e4u" secondAttribute="topMargin" id="DUe-Gd-99E"/>
+                            <constraint firstAttribute="bottom" secondItem="mkZ-Ne-HkP" secondAttribute="bottom" id="FEs-T0-eOc"/>
+                            <constraint firstAttribute="trailing" secondItem="mkZ-Ne-HkP" secondAttribute="trailing" id="Gab-sc-Cpr"/>
+                            <constraint firstItem="Yu3-qK-Z9L" firstAttribute="top" secondItem="mkZ-Ne-HkP" secondAttribute="bottom" id="RZl-yn-LYz"/>
+                            <constraint firstItem="mkZ-Ne-HkP" firstAttribute="top" secondItem="GDc-nk-e4u" secondAttribute="top" id="ZlD-KH-zFN"/>
+                            <constraint firstItem="mkZ-Ne-HkP" firstAttribute="top" secondItem="ONU-HY-t4Z" secondAttribute="bottom" id="cek-hI-Ijo"/>
+                            <constraint firstItem="Yu3-qK-Z9L" firstAttribute="top" secondItem="mkZ-Ne-HkP" secondAttribute="bottom" id="qiL-vJ-GmE"/>
+                            <constraint firstItem="mkZ-Ne-HkP" firstAttribute="top" secondItem="ONU-HY-t4Z" secondAttribute="bottom" constant="21" id="xIX-pF-qfC"/>
+                            <constraint firstItem="mkZ-Ne-HkP" firstAttribute="leading" secondItem="GDc-nk-e4u" secondAttribute="leading" id="xmn-ps-CWY"/>
+                            <constraint firstItem="mkZ-Ne-HkP" firstAttribute="top" secondItem="GDc-nk-e4u" secondAttribute="top" id="yqP-oH-N4Y"/>
+                            <constraint firstAttribute="trailing" secondItem="mkZ-Ne-HkP" secondAttribute="trailing" id="zN3-78-VAy"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="mkZ-Ne-HkP"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="6zg-Vg-LY9"/>
+                                <exclude reference="DUe-Gd-99E"/>
+                                <exclude reference="FEs-T0-eOc"/>
+                                <exclude reference="Gab-sc-Cpr"/>
+                                <exclude reference="ZlD-KH-zFN"/>
+                                <exclude reference="cek-hI-Ijo"/>
+                                <exclude reference="xIX-pF-qfC"/>
+                                <exclude reference="xmn-ps-CWY"/>
+                                <exclude reference="yqP-oH-N4Y"/>
+                                <exclude reference="zN3-78-VAy"/>
+                                <exclude reference="RZl-yn-LYz"/>
+                                <exclude reference="qiL-vJ-GmE"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="mkZ-Ne-HkP"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="6zg-Vg-LY9"/>
+                                <exclude reference="DUe-Gd-99E"/>
+                                <exclude reference="FEs-T0-eOc"/>
+                                <include reference="Gab-sc-Cpr"/>
+                                <exclude reference="ZlD-KH-zFN"/>
+                                <include reference="cek-hI-Ijo"/>
+                                <exclude reference="xIX-pF-qfC"/>
+                                <include reference="xmn-ps-CWY"/>
+                                <exclude reference="yqP-oH-N4Y"/>
+                                <exclude reference="zN3-78-VAy"/>
+                                <include reference="RZl-yn-LYz"/>
+                                <exclude reference="qiL-vJ-GmE"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="mkZ-Ne-HkP" id="TFb-o3-2nj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LF8-Ms-TC3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-25.5" y="1056"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="6BM-Ip-lHd">
+            <objects>
+                <viewController storyboardIdentifier="second_view_controller" id="NmW-Cg-YIr" customClass="SecondViewController" customModule="SwipeCellAsSnapChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8j8-BF-wwg"/>
+                        <viewControllerLayoutGuide type="bottom" id="gO2-j6-2Qw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tnw-Ya-Bu0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.98039215690000003" green="0.42745098040000001" blue="0.51764705879999995" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PJQ-6c-bfg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="798" y="1056"/>
         </scene>
     </scenes>
 </document>

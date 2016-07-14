@@ -14,6 +14,9 @@
 		7A29042A1D365A730009758F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A2904281D365A730009758F /* LaunchScreen.storyboard */; };
 		7A2904351D365A730009758F /* SwipeCellAsSnapChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2904341D365A730009758F /* SwipeCellAsSnapChatTests.swift */; };
 		7A2904401D365A730009758F /* SwipeCellAsSnapChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A29043F1D365A730009758F /* SwipeCellAsSnapChatUITests.swift */; };
+		7A29044E1D365C480009758F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A29044D1D365C480009758F /* FirstViewController.swift */; };
+		7A2904501D365C520009758F /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A29044F1D365C520009758F /* SecondViewController.swift */; };
+		7A73F44B1D366F1E0000AE2C /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A73F44A1D366F1E0000AE2C /* CustomCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		7A29043B1D365A730009758F /* SwipeCellAsSnapChatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwipeCellAsSnapChatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A29043F1D365A730009758F /* SwipeCellAsSnapChatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeCellAsSnapChatUITests.swift; sourceTree = "<group>"; };
 		7A2904411D365A730009758F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A29044D1D365C480009758F /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		7A29044F1D365C520009758F /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		7A73F44A1D366F1E0000AE2C /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,9 @@
 			children = (
 				7A29041F1D365A730009758F /* AppDelegate.swift */,
 				7A2904211D365A730009758F /* ViewController.swift */,
+				7A29044D1D365C480009758F /* FirstViewController.swift */,
+				7A29044F1D365C520009758F /* SecondViewController.swift */,
+				7A73F44A1D366F1E0000AE2C /* CustomCell.swift */,
 				7A2904231D365A730009758F /* Main.storyboard */,
 				7A2904261D365A730009758F /* Assets.xcassets */,
 				7A2904281D365A730009758F /* LaunchScreen.storyboard */,
@@ -256,6 +265,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A2904501D365C520009758F /* SecondViewController.swift in Sources */,
+				7A29044E1D365C480009758F /* FirstViewController.swift in Sources */,
+				7A73F44B1D366F1E0000AE2C /* CustomCell.swift in Sources */,
 				7A2904221D365A730009758F /* ViewController.swift in Sources */,
 				7A2904201D365A730009758F /* AppDelegate.swift in Sources */,
 			);
@@ -482,6 +494,7 @@
 				7A2904461D365A730009758F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7A2904471D365A730009758F /* Build configuration list for PBXNativeTarget "SwipeCellAsSnapChatTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +503,7 @@
 				7A2904491D365A730009758F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7A29044A1D365A730009758F /* Build configuration list for PBXNativeTarget "SwipeCellAsSnapChatUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +512,7 @@
 				7A29044C1D365A730009758F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
