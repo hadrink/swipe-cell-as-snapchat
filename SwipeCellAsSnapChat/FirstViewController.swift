@@ -72,8 +72,8 @@ extension FirstViewController: HandlePanDelegate {
         indexPath = indexPathForSwipeCell
         let cell: CustomCell = tableView.cellForRowAtIndexPath(indexPathForSwipeCell) as! CustomCell
         
-        //-- Statemment : if translation.x < 0 : active swipe
-        if translation.x < -50 {
+        //-- Statemment : if cell position < 0 : active swipe
+        if cell.frame.origin.x < -50 {
             swipeCellDelegate?.swipeCell(cellDidSwipe: true)
         } else {
             swipeCellDelegate?.swipeCell(cellDidSwipe: false)
