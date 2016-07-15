@@ -107,6 +107,7 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.35686274509999999" green="0.56470588239999997" blue="0.80784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="testLabel" destination="fct-g0-bct" id="FX1-SV-qs2"/>
                                         </connections>

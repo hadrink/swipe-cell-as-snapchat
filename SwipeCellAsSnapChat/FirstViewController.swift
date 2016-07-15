@@ -21,6 +21,8 @@ class FirstViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     
     var indexPath: NSIndexPath?
+    var swipeViewOriginY: CGFloat = 0.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         panDelegate = self
@@ -32,7 +34,7 @@ extension FirstViewController: UITableViewDataSource {
     
     //-- Return nb of rows
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     //-- Display cell
@@ -46,10 +48,12 @@ extension FirstViewController: UITableViewDataSource {
         let swipeView: UIView = UIView(frame: cell.frame)
         swipeView.frame = cell.frame
         swipeView.frame.size.width = tableView.frame.width
+        swipeView.frame.origin.y = swipeViewOriginY
         swipeView.backgroundColor = UIColor.redColor()
-        tableView.insertSubview(swipeView, atIndex: indexPath.row)
+        tableView.insertSubview(swipeView, atIndex: 0)
         
-        //self.indexPath = indexPath
+        //-- Inc Y position
+        swipeViewOriginY += cell.frame.height
         
         //-- Return cell to display
         return cell
@@ -83,7 +87,7 @@ extension FirstViewController: HandlePanDelegate {
     
     func handlePan(visibleView visible: UIView) {
         if visible == self.view {
-            print("First view is completely visible")
+            print("First view is fully displayed")
         }
     }
     
@@ -97,15 +101,12 @@ extension FirstViewController: HandlePanDelegate {
     //-- Method called when the user touch up the screen
     func handlePan(didEndDragging didEnd: Bool) {
         
-        //-- Check if indexPath exist else return
-        guard let indexPathForResetCell = indexPath else {
-            return
-        }
-        
         //-- Reset cell frame
-        let cell = tableView.cellForRowAtIndexPath(indexPathForResetCell)
-        UIView.animateWithDuration(0.2, animations: {
-            cell?.transform = CGAffineTransformIdentity
-        })
+        let cells = tableView.visibleCells
+        for cell in cells {
+            UIView.animateWithDuration(0.2, animations: {
+                cell.transform = CGAffineTransformIdentity
+            })
+        }
     }
 }
